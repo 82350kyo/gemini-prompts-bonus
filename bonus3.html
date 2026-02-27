@@ -232,6 +232,48 @@
             box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
         }
 
+        .openchat-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px 20px;
+            margin-top: 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease;
+        }
+
+        .openchat-card h3 {
+            font-size: 20px;
+            color: #f5576c;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .openchat-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .openchat-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+        }
+
+        .openchat-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 87, 108, 0.5);
+        }
+
         .footer {
             text-align: center;
             color: white;
@@ -304,7 +346,7 @@
 
             <div class="gift-box">
                 <p>🎁 特別特典をプレゼント！</p>
-                <p style="margin-top: 8px; font-size: 15px;">プロ級デザインが作れる<br>ロゴ生成プロンプト</p>
+                <p style="margin-top: 8px; font-size: 15px;">Geminiで使える！<br>プロ級デザインが作れる<br>ロゴ生成プロンプト</p>
             </div>
         </div>
 
@@ -315,7 +357,7 @@
             </div>
 
             <div class="example-images">
-                <div class="example-title">作成例：オーガニックカフェのロゴ（3パターン）</div>
+                <div class="example-title">作成例：オーガニックカフェのロゴ（2パターン）</div>
                 <div class="image-grid">
                     <div class="image-item">
                         <span class="image-label">パターン1</span>
@@ -324,10 +366,6 @@
                     <div class="image-item">
                         <span class="image-label">パターン2</span>
                         <img src="ロゴデザイン例２.png" alt="ロゴデザイン例2">
-                    </div>
-                    <div class="image-item">
-                        <span class="image-label">パターン3</span>
-                        <img src="ロゴデザイン例３.png" alt="ロゴデザイン例3">
                     </div>
                 </div>
             </div>
@@ -348,6 +386,13 @@
 - 背景は「白背景（White background）」で、加工しやすくすること。
 - 視認性が高く、SNSのアイコンにしても映えるフラットデザインにすること。</div>
             <button class="copy-button" onclick="copyPrompt(3)">📋 コピーする</button>
+        </div>
+
+        <div class="openchat-card">
+            <h3>💬 オープンチャットでアウトプット！</h3>
+            <p>改めて本日は個別相談<br>ありがとうございました。</p>
+            <p style="margin-top: 10px;">今日の感想を<br>オープンチャットに<br>アウトプットしてくださいね</p>
+            <a href="https://line.me/ti/g2/llzhX9Py9zDwUXe1iBI1ye5-lPmS15wUXNk53A?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" class="openchat-button">オープンチャットに参加する</a>
         </div>
 
         <div class="footer">
