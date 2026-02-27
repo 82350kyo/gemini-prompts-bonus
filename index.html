@@ -162,23 +162,44 @@
         .cta-card {
             background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
             border-radius: 16px;
-            padding: 25px 20px;
+            padding: 30px 20px;
             margin: 30px 0;
-            text-align: center;
             color: white;
             box-shadow: 0 4px 20px rgba(238, 90, 111, 0.4);
             animation: fadeInUp 0.8s ease;
         }
 
         .cta-card h2 {
-            font-size: 20px;
-            margin-bottom: 10px;
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
         }
 
         .cta-card p {
-            font-size: 14px;
-            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 15px;
             opacity: 0.95;
+        }
+
+        .cta-card .highlight {
+            font-weight: bold;
+            font-size: 16px;
+            background: rgba(255,255,255,0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .cta-card .urgent {
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            border: 2px solid rgba(255,255,255,0.3);
         }
 
         .cta-button {
@@ -202,7 +223,7 @@
         .bonus-card {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             border-radius: 16px;
-            padding: 25px 20px;
+            padding: 30px 20px;
             margin: 30px 0;
             text-align: center;
             color: white;
@@ -211,14 +232,61 @@
         }
 
         .bonus-card h2 {
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
         }
 
         .bonus-card p {
             font-size: 15px;
-            line-height: 1.8;
+            line-height: 1.9;
             opacity: 0.95;
+            margin-bottom: 12px;
+        }
+
+        .bonus-card .bonus-title {
+            font-size: 17px;
+            font-weight: bold;
+            margin: 15px 0 10px 0;
+        }
+
+        .bonus-card .instruction {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 2px dashed rgba(255,255,255,0.4);
+        }
+
+        .bonus-card .instruction p {
+            margin-bottom: 8px;
+        }
+
+        .bonus-card .step {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .copy-keyword-button {
+            background: rgba(255,255,255,0.9);
+            color: #f5576c;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .copy-keyword-button:active {
+            transform: scale(0.98);
+        }
+
+        .copy-keyword-button.copied {
+            background: #4caf50;
+            color: white;
         }
 
         .footer {
@@ -361,17 +429,55 @@
 
         <div class="cta-card">
             <h2>💡 プロンプトの活用方法を知りたい方へ</h2>
-            <p>ただ、このプロンプトをどのように活用すればいいかわかりませんよね。<br>なので、僕が説明します！</p>
-            <p style="margin-top: 10px;">知りたい方は個別相談に申し込んでくださいね！<br>個別相談では、プロンプトの活用方法に加え、最新のAIマネタイズ方法についてお教えしますね😊</p>
-            <p style="margin-top: 15px; font-weight: bold; font-size: 15px;">枠にも限りがありますのでご希望の方はお急ぎください！</p>
+
+            <p style="text-align: center; font-size: 16px; margin-bottom: 25px;">
+                ただ、このプロンプトを<br>
+                <span class="highlight">どのように活用すればいいか</span><br>
+                わかりませんよね。
+            </p>
+
+            <p style="text-align: center; font-size: 17px; font-weight: bold; margin-bottom: 20px;">
+                なので、僕が説明します！
+            </p>
+
+            <p style="text-align: left; margin-bottom: 10px;">
+                知りたい方は<span class="highlight">個別相談</span>に申し込んでくださいね！
+            </p>
+
+            <p style="text-align: left; margin-bottom: 20px;">
+                個別相談では、<br>
+                ✓ プロンプトの活用方法<br>
+                ✓ 最新のAIマネタイズ方法<br>
+                についてお教えしますね😊
+            </p>
+
+            <div class="urgent">
+                ⚠️ 枠にも限りがあります！<br>
+                ご希望の方はお急ぎください
+            </div>
         </div>
 
         <div class="bonus-card">
-            <h2>🎁 個別相談当日にさらに特典3もプレゼント！</h2>
-            <p style="font-size: 16px; font-weight: bold; margin-bottom: 10px;">【特典3】</p>
-            <p>プロ級デザイン！<br>【ロゴ・アイコン制作】高品質ロゴ生成プロンプト</p>
-            <p style="margin-top: 20px; font-size: 14px; line-height: 1.8;">個別相談の申し込みの方は<br>こちらの公式LINEを登録して<br>「特典3」とお送りください</p>
-            <a href="https://82350kyo.github.io/line-registration-aione/" class="cta-button" style="margin-top: 15px;">個別面談の申し込みはこちらから</a>
+            <h2>🎁 個別相談当日にさらに<br>特典3もプレゼント！</h2>
+
+            <p class="bonus-title">【特典3】</p>
+            <p style="font-size: 16px;">プロ級デザイン！<br>【ロゴ・アイコン制作】<br>高品質ロゴ生成プロンプト</p>
+
+            <div class="instruction">
+                <p class="step">📱 受け取り方法</p>
+                <p style="margin-top: 15px;">
+                    <strong>STEP 1:</strong> 下のボタンから公式LINEに登録
+                </p>
+                <p>
+                    <strong>STEP 2:</strong> 以下のキーワードをコピー
+                </p>
+                <button class="copy-keyword-button" onclick="copyKeyword()">「特典3」をコピーする</button>
+                <p>
+                    <strong>STEP 3:</strong> 公式LINEに貼り付けて送信
+                </p>
+            </div>
+
+            <a href="https://82350kyo.github.io/line-registration-aione/" class="cta-button" style="margin-top: 15px; display: inline-block;">個別相談の申し込みはこちらから</a>
         </div>
 
         <div class="footer">
@@ -386,6 +492,25 @@
             const button = event.target;
 
             navigator.clipboard.writeText(promptContent).then(() => {
+                const originalText = button.textContent;
+                button.textContent = '✅ コピーしました！';
+                button.classList.add('copied');
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                alert('コピーに失敗しました。もう一度お試しください。');
+                console.error('コピーエラー:', err);
+            });
+        }
+
+        function copyKeyword() {
+            const keyword = '特典3';
+            const button = event.target;
+
+            navigator.clipboard.writeText(keyword).then(() => {
                 const originalText = button.textContent;
                 button.textContent = '✅ コピーしました！';
                 button.classList.add('copied');
