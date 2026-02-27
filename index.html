@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geminiで完結！最強プロンプト3選 - 特典1・2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px 15px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            color: rgba(255,255,255,0.9);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .prompt-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            animation: fadeInUp 0.8s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .prompt-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .prompt-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .prompt-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .prompt-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .example-images {
+            margin: 15px 0;
+        }
+
+        .example-images img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .example-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .example-title::before {
+            content: "✨";
+            margin-right: 5px;
+        }
+
+        .prompt-content {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: #555;
+            white-space: pre-line;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 2px dashed #e0e0e0;
+        }
+
+        .copy-button {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 14px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .copy-button:active {
+            transform: scale(0.98);
+        }
+
+        .copy-button.copied {
+            background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            border-radius: 16px;
+            padding: 25px 20px;
+            margin: 30px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 20px rgba(238, 90, 111, 0.4);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .cta-card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .cta-card p {
+            font-size: 14px;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #ff6b6b;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .bonus-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 16px;
+            padding: 25px 20px;
+            margin: 30px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 20px rgba(245, 87, 108, 0.4);
+            animation: pulse 2s ease infinite;
+        }
+
+        .bonus-card h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .bonus-card p {
+            font-size: 15px;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            font-size: 14px;
+            animation: fadeIn 1s ease;
+        }
+
+        .footer p {
+            margin-bottom: 5px;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        .prompt-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .prompt-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .prompt-content::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+
+        .prompt-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .prompt-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎁 Geminiで完結！<br>最強プロンプト3選！</h1>
+            <p>公式LINE登録者限定特典</p>
+            <span class="badge">特典1・2を公開中！</span>
+        </div>
+
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <div class="prompt-number">1</div>
+                <div class="prompt-title">【LINEスタンプ】絵心ゼロで量産！キャラ設定＆画像生成プロンプト</div>
+            </div>
+
+            <div class="example-images">
+                <div class="example-title">作成例：魚屋で働く猫</div>
+                <img src="LINEスタンプ例.png" alt="LINEスタンプ作成例">
+            </div>
+
+            <div class="prompt-content" id="prompt1"># 役割
+あなたはプロのLINEスタンプクリエイターです。
+私と一緒に、売れるスタンプのキャラクター設定と、画像生成用のプロンプトを作成してください。
+
+# 実行手順（重要）
+1. 最初は何も生成しないでください。
+2. まず私に「今回はどのようなテーマ（例：柴犬、ゆるい猫、やる気のない会社員など）でスタンプを作りたいですか？」と質問してください。
+3. 私がテーマを回答したら、以下の[出力内容]を作成してください。
+
+# 出力内容（私の回答後）
+1. キャラクターの基本設定（名前、性格、愛されるポイント）
+2. キャラの一貫性を保つための「共通の容姿キーワード（英語）」
+3. そのキャラで画像生成を行うための「画像生成指示文（英語）」を、以下の8パターン作成してください。
+   (挨拶、了解、感謝、謝罪、喜、怒、哀、驚)
+
+# 画像生成の制約
+- 背景は必ず「white background（白背景）」にすること。
+- スタイルは「sticker style, thick lines, simple vector, flat design, cute character」とすること。
+- Geminiでそのまま画像が出るように構成すること。</div>
+            <button class="copy-button" onclick="copyPrompt(1)">📋 コピーする</button>
+        </div>
+
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <div class="prompt-number">2</div>
+                <div class="prompt-title">【TikTok/Shorts】再生数爆上げ！AI動画台本作成プロンプト</div>
+            </div>
+            <div class="prompt-content" id="prompt2"># 役割
+あなたはSNSマーケティングの専門家で、ショート動画の台本作成の達人です。
+視聴者がスマホを止める「バズる構成」の台本を私と一緒に作りましょう。
+
+# 実行手順（重要）
+1. 最初は台本を作らないでください。
+2. まず私に「今回の動画のテーマや、紹介したい内容は何ですか？（例：AIで月5万稼ぐ方法、最新の便利ツール紹介など）」と質問してください。
+3. 私が回答したら、以下の[構成]で台本を出力してください。
+
+# 台本の構成（回答後に出力）
+1. 強烈なフック（冒頭3秒）：一瞬で心を掴むキャッチコピー
+2. 共感・問題提起：視聴者の悩みを代弁する一言
+3. 解決策：具体的なAIツールの紹介やノウハウ
+4. 行動喚起（CTA）：オプチャ登録やフォローへの誘導
+5. 編集指示：バズらせるためのテロップや音楽のイメージ</div>
+            <button class="copy-button" onclick="copyPrompt(2)">📋 コピーする</button>
+        </div>
+
+        <div class="cta-card">
+            <h2>📱 まだ公式LINEに登録していない方へ</h2>
+            <p>さらに便利なAI活用情報を<br>公式LINEでお届け中！</p>
+            <a href="https://82350kyo.github.io/line-registration-aione/" class="cta-button">公式LINEに登録する</a>
+        </div>
+
+        <div class="bonus-card">
+            <h2>🎁 個別面談でさらに特典3もゲット！</h2>
+            <p>【ロゴ・アイコン制作】プロ級デザイン！<br>高品質ロゴ生成プロンプト</p>
+            <p style="margin-top: 15px; font-size: 13px;">※個別面談参加者限定でプレゼント</p>
+        </div>
+
+        <div class="footer">
+            <p>✨ Geminiにコピペして使ってね！</p>
+            <p>公式LINEでさらに便利な情報をお届け中</p>
+        </div>
+    </div>
+
+    <script>
+        function copyPrompt(number) {
+            const promptContent = document.getElementById('prompt' + number).textContent;
+            const button = event.target;
+
+            navigator.clipboard.writeText(promptContent).then(() => {
+                const originalText = button.textContent;
+                button.textContent = '✅ コピーしました！';
+                button.classList.add('copied');
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                alert('コピーに失敗しました。もう一度お試しください。');
+                console.error('コピーエラー:', err);
+            });
+        }
+    </script>
+</body>
+</html>
